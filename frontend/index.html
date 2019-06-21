@@ -9,9 +9,7 @@
 </head>
 <body>
 
-  <header> <!-- TODO: Move to app/shared/components/header -->
-    <h2>Welcome to Giraphy</h2>
-  </header>
+  <header ng-include="'app/shared/components/header/header.tpl.html'"></header>
 
   <main>
     <div ng-view></div> <!-- Template Inject -->

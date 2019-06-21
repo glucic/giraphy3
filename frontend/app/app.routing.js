@@ -6,8 +6,9 @@ const app = angular.module("myApp", [
 
 app.config(function ($routeProvider) {
         $routeProvider.when('/', {
-            title: "Home",
             templateUrl: "app/modules/home/components/home.tpl.html"
+        }).when('/forum', {
+            templateUrl: "app/modules/forum/components/startPage.tpl.html"
         })
     });
 
