@@ -5,10 +5,14 @@ const app = angular.module("myApp", [
 ]);
 
 app.config(function ($routeProvider) {
-        $routeProvider.when('/', {
+        $routeProvider
+        .when('/', {
             templateUrl: "app/modules/home/components/home.tpl.html"
         }).when('/forum', {
             templateUrl: "app/modules/forum/components/startPage.tpl.html"
+        }).when('/login', {
+            templateUrl: "app/modules/login/components/login.tpl.html",
+            css: 'app/modules/login/components/login.css'
         })
     });
 
