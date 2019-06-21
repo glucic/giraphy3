@@ -1,0 +1,7 @@
+# Dockerfile for app (Apache2 server)
+
+FROM httpd:2.4
+
+# copy project
+COPY frontend /usr/local/apache2/htdocs/
+COPY frontend/httpd.conf /usr/local/apache2/conf/

@@ -1,0 +1,25 @@
+# Dockerfile for API (Apache2 server + php)
+
+FROM php:7.1.8-apache
+MAINTAINER "Gabriel Lucic" "gabriel.lucic@gmx.de GitHub: gLucic"
+
+RUN printf "deb http://archive.debian.org/debian/ jessie main\ndeb-src http://archive.debian.org/debian/ jessie main\ndeb http://security.debian.org jessie/updates main\ndeb-src http://security.debian.org jessie/updates main" > /etc/apt/sources.list
+RUN echo 'after reading package list, the rest will be in the background ... :)'
+RUN apt-get update && apt-get install -y libpq-dev >/dev/null 2>&1\
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql >/dev/null 2>&1\
+    && docker-php-ext-install pdo pdo_pgsql pgsql mbstring >/dev/null 2>&1
+
+RUN curl -sS https://getcomposer.org/installer | php \
+      && chmod +x composer.phar && mv composer.phar /usr/local/bin/composer
+
+RUN apt-get install -y git >/dev/null 2>&1
+RUN apt-get install -y zip >/dev/null 2>&1
+RUN apt-get install -y unzip >/dev/null 2>&1
+
+COPY backend /var/www
+RUN a2enmod rewrite && rm -r /var/www/html && ln -sf /var/www/public /var/www/html
+RUN chmod -R 777 /var/www
+
+RUN mkdir -m 777 -p /var/www/public/export-files/csv
+
+RUN cd /var/www && composer install --prefer-dist && composer dump-autoload

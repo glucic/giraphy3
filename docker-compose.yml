@@ -1,0 +1,22 @@
+version: "2"
+services:
+  backend:
+      container_name: giraphy-backend
+      build:
+        context: .
+        dockerfile: backend/docker-backend
+      volumes:
+        - ./backend/app:/var/www/app
+        - ./backend/config:/var/www/config
+        - ./backend/routes:/var/www/routes
+        - ./backend/database:/var/www/database
+        - ./backend/database/migrations:/var/www/database/migrations
+  frontend:
+      container_name: giraphy-frontend
+      build:
+        context: .
+        dockerfile: frontend/docker-frontend
+      ports:
+        - "1337:80"
+      volumes:
+        - ./frontend:/usr/local/apache2/htdocs/
