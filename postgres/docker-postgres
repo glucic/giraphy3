@@ -1,0 +1,17 @@
+# Dockerfile for PostgreSQL 9.5 server
+
+FROM postgres:9.5
+MAINTAINER "Gabriel Lucic" "gabriel.lucic@gmx.de"
+
+# env vars for database
+ENV POSTGRES_USER postgres
+ENV POSTGRES_PASSWORD postgres
+ENV POSTGRES_DB giraphy
+
+#copy .sql dump to entrypoint
+ADD postgres/postgres-schema/db.sql /docker-entrypoint-initdb.d/
+
+# add config files to postgres docker
+ADD postgres/postgres-conf /usr/share/postgresql/9.5/
+
+EXPOSE 5433

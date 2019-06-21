@@ -1,4 +1,4 @@
-.login-page {
+.form-page {
     display: flex;
     width: 500px;
     margin-top: 50px;
@@ -8,23 +8,23 @@
     justify-content: center;
 }
 
-.login-page .login-focus {
+.form-page .focus {
     color: #974751;
 }
 
-.login-page .login-header {
+.form-page .form-header {
     width: 100%;
     align-items: center;
     margin-bottom: 60px;
 }
 
-.login-header h2 {
+.form-header h2 {
     display: inline;
     padding: 20px;
     font-size: 40px;
 }
 
-.login-page input {
+.form-page input {
     display: flex;
     background-color: inherit;
     border: none;
@@ -37,12 +37,12 @@
     outline: none;
 }
 
-.login-page input:focus {
+.form-page input:focus {
     width: 400px;
     border-bottom: 5px solid #BF5967;
 }
 
-.login-page .form-button {
+.form-page .form-button {
     width: 400px;
     height: 70px;
     border: none;
@@ -51,4 +51,9 @@
     font-size: 25px;
     background-color: #984950;
     color: white;
+}
+
+.form-button:hover {
+    transition: 0.1s ease-in;
+    background-color: #ae545b;
 }
