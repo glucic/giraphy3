@@ -1,0 +1,39 @@
+/* Color Pallets */
+/* Primary #333333 */
+/* Secondary #BF5967 */
+/* Contrast #E38A74 */
+/* Contrast 2 #FFFFFF */
+/* Highlight #FFE8B7 */
+/* Highlight Contrast #FFBE87 */
+
+
+/* Globals */
+html {
+    background-color: #333333;
+    color: #FFFFFF;
+    font-family: Courier;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+}
+
+header {
+    position: absolute;
+    display: flex;
+    top: 0;
+    width: 100%;
+    background-color: #BF5967;
+    border-bottom: 2px solid #FFFFFF;
+}
+header h2 {
+    color: #FFFFFF;
+    padding-left: 20px;
+    font-size: 25px;
+}
+
+footer {
+}
