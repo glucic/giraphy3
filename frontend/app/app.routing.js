@@ -13,6 +13,9 @@ app.config(function ($routeProvider) {
         }).when('/login', {
             templateUrl: "app/modules/login/components/login.tpl.html",
             css: 'app/modules/login/components/login.css'
+        }).when('/register', {
+            templateUrl: "app/modules/register/components/register.tpl.html",
+            css: 'app/modules/register/components/register.css'
         })
     });
 
