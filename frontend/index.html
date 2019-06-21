@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="html" ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,16 +8,21 @@
   <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body>
-  <header>
-    <!-- TODO -->
+
+  <header> <!-- TODO: Move to app/shared/components/header -->
     <h2>Welcome to Giraphy</h2>
   </header>
+
   <main>
-    <div ng-view></div>
+    <div ng-view></div> <!-- Template Inject -->
   </main>
 
-
+  <!-- Libraries -->
   <script src="app/lib/angular/angular.js"></script>
   <script src="app/lib/angular-route/angular-route.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="app/app.routing.js"></script>
+
 </body>
 </html>
